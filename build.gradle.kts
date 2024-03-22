@@ -35,7 +35,7 @@ kotlin {
             implementation(libs.ktor.serialization.kotlinx.json)
             implementation(libs.ktor.logging)
             implementation(libs.ktor.auth)
-            implementation(project(":shared:common"))
+            implementation(project(":shared:core-common"))
         }
 
         androidMain.dependencies {
