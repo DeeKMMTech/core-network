@@ -29,23 +29,22 @@ kotlin {
         commonMain.dependencies {
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.kotlinx.serialization.json)
-            implementation(libs.koin.core)
-            implementation(libs.ktor.client.core)
-            implementation(libs.ktor.client.content.negotiation)
-            implementation(libs.ktor.serialization.kotlinx.json)
-            implementation(libs.ktor.logging)
-            implementation(libs.ktor.auth)
-            implementation(project(":shared:core-common"))
+            api(libs.koin.core)
+            api(libs.ktor.client.core)
+            api(libs.ktor.client.content.negotiation)
+            api(libs.ktor.serialization.kotlinx.json)
+            api(libs.ktor.logging)
+            api(libs.ktor.auth)
+            api(project(":shared:core-common"))
         }
 
         androidMain.dependencies {
-            implementation(libs.ktor.client.okhttp)
-            implementation(libs.threetenabp)
+            api(libs.ktor.client.okhttp)
+            api(libs.threetenabp)
         }
 
         iosMain.dependencies {
-            implementation(libs.ktor.client.darwin)
-
+            api(libs.ktor.client.darwin)
         }
     }
 }
