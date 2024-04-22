@@ -1,10 +1,7 @@
-import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
-import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
-
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
-    kotlin("plugin.serialization") version "1.9.22"
+    alias(libs.plugins.kotlinSerialization)
 }
 
 
@@ -35,7 +32,7 @@ kotlin {
             api(libs.ktor.serialization.kotlinx.json)
             api(libs.ktor.logging)
             api(libs.ktor.auth)
-            api(project(":shared:core-common"))
+            implementation(projects.shared.coreCommon)
         }
 
         androidMain.dependencies {
